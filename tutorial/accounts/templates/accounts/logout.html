@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+{%block body%}
+<div class="container">
+   <head>
+       {% block head %}
+     <title>logout</title>
+   </head>
+       {%endblock%}
+    <br>
+   <!-- Static navbar -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+                <ul class="nav navbar-nav navbar-right">
+          </ul>
+            <h4>
+            Thanks for spending some quality time with the Web site today.!
+            </h4>
+            <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+                <LINK type="submit"><a href="login"> Login Here</a> </LINK>
+            </form>
+
+            {%endblock%}
+        </div>
+        </div>

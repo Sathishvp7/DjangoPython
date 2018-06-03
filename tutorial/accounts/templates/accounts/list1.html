@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+{%block head%}
+<title xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Task View</title>
+{%endblock%}
+{%block body%}
+<div class="list-group-item list-group-item-info">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/account/Home">Home</a>
+    <a class="navbar-brand" href="/account/logout">Logout</a>
+    <a class="navbar-brand" href="{% url 'accounts:profile'%}">Profile</a>
+    <a class="navbar-brand" href="{% url 'accounts:edit_profile'%}">Edit Profile</a>
+    <a class="navbar-brand" href="{% url 'accounts:change_password'%}">Change Password</a>
+
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+           </div>
+    </nav>
+</body>
+
+<div class="container">
+
+  <h1>Task View</h1>
+<div>
+
+<div>
+
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Title</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.title}}"   readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Task ID</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.task_id}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Priority</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.priority}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Status</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.status}}"  readonly />
+  </div>
+</div>
+ <div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Resource Name</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.resource_name}}"  readonly />
+  </div>
+</div>
+  <div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Effort Estimated(Hrs)</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.effort_estimated}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Actual Start Date</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.actual_start_date}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Deadline</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.deadline}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Actual Effort</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.actual_effort}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-number-input" class="col-2 col-form-label">Actual Date of Completion</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.actual_date_completion}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Resource Score</label>
+  <div class="col-10">
+    <input type="text" value="{{BlogGet.resource_score}}"  readonly />
+  </div>
+</div>
+<div class="form-group row">
+  <label for="example-text-input" class="col-2 col-form-label">Reason</label>
+  <div class="col-10">
+    <input style="height:150px;font-size:12pt;" type="text" value="{{BlogGet.reason}}"  readonly />
+  </div>
+</div>
+    </div>
+</div>
+</div>
+</div>
+{%endblock%}

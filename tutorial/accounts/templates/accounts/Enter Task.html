@@ -1,0 +1,70 @@
+
+{% extends 'base.html'%}
+
+{% block head %}
+<div class="container">
+<title>Enter Task</title>
+
+{% endblock %}
+   {% block body %}
+<br>
+
+      <h2 class="text-primary">Enter Your Task Here</h2>
+	<form method="post">
+		{% csrf_token%}
+
+
+<table class="table">
+<thead class= "thead-inverse">
+  <tr>
+    <th>Task ID</th>
+    <th>Task Name</th>
+	<th>Status</th>
+	<th>Priority</th>
+	<th>Resource</th>
+	<th>Effort Estimated(hrs) </th>
+	<th>Actual start date</th>
+	<th>Deadline</th>
+	<th>Actual effort(hrs)</th>
+	<th>Actual date of completion</th>
+	<th>Remark</th>
+
+  </tr>
+  <tr>
+
+    <td><input type="text" required></td>
+	<td><input type="text" required></td>
+	<td><select required>
+	<option value="Inprogress">In progress</option>
+	<option value="Hold">Hold</option>
+	<option value="Completed">Completed</option>
+	</select></td>
+	<td><select required>
+	<option value="Inprogress">High</option>
+	<option value="Hold">Medium</option>
+	<option value="Completed"><Low/option>
+	</select></td>
+	<td><input type="text" pattern="[A-Za-z]+" required></td>
+	<td><input type="number"  required id="replyNumber" data-bind="value:replyNumber" /></td>
+	<td><form action="/action_page.php">
+     <input type="date" name="Actual start date" required>
+          </form></td></td>
+	<td><form action="/action_page.php" required>
+     <input type="date" name="Deadline">
+          </form></td>
+	<td><input type="number"></td>
+	<td><form action="/action_page.php">
+      <input type="date" name="Actual date of completion">
+         </form></td>
+	<td><input type="text" required></td>
+  </tr>
+
+</table>
+
+<button type="submit" class="btn btn-success">Submit</button>
+<h3>{{ text }}</h3>
+	</form>
+
+
+</div>
+{%endblock%}

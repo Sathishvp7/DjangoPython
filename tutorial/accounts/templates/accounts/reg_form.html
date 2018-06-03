@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+ {%block body%}
+<br>
+<h2>Signup Here!</h2>
+    <div class="container">
+
+            <form method="post">
+            {%csrf_token %}
+            {{form.as_p}}
+  <div class="col-md-8">
+    <button id="submit" name="submit" class="btn btn-primary" value="1">Create Profile</button>
+      <a href="/account/Home" class="btn btn-danger" role="button">Cancel</a>
+  </div>
+
+            </form>
+    </div>
+{%endblock%}

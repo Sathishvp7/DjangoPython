@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+</head>
+
+{%block head%}
+  <title>Task View</title>
+{%endblock%}
+{%block body%}
+<div class="text-primary ">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="/account/Home">Home</a>
+    <a class="navbar-brand" href="/account/logout">Logout</a>
+    <a class="navbar-brand" href="{% url 'accounts:profile'%}">Profile</a>
+    <a class="navbar-brand" href="{% url 'accounts:edit_profile'%}">Edit Profile</a>
+    <a class="navbar-brand" href="{% url 'accounts:change_password'%}">Change Password</a>
+
+
+
+    <form class="form-inline my-2 my-lg-0 ">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+           </div>
+    </nav>
+</body>
+<h1><p class="text-center">Task List </p></h1>
+<div class="container  ">
+
+{% for BlogGet in BlogAll%}
+<div class="list-group col-sm-10 ">
+    <h4 ><span class= "list-group-item list-group-item-info col-sm-3"><a href="/account/get/{{ BlogGet.id }}">{{BlogGet.title}}</a></span></h4>
+    <h3>{{ BlogGet.body}}</h3>
+        </div>
+{% endfor%}
+
+</div>
+
+</div>
+
+
+
+{%endblock%}

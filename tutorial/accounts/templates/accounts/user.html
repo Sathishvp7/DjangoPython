@@ -1,0 +1,17 @@
+{%extends 'base.html' %}
+{% block head %}
+  <title>Simple is Better Than Complex</title>
+{% endblock %}
+   {% block body %}
+
+  <div class="container">
+    <form method="post" novalidate>
+      {% csrf_token %}
+
+      {% include 'includes/bs4_form.html' with form=form %}
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  </div>
+{% endblock %}
